@@ -1,0 +1,48 @@
+Task 4: Setup and Use a Firewall on Windows
+
+Objective:
+To configure firewall rules to block and allow specific traffic using Windows Defender Firewall.
+
+Tools Used:
+- Windows Defender Firewall with Advanced Security
+- Command Prompt (for testing)
+
+Steps Performed:
+
+1. Open Firewall:
+   - Press Win + R, type wf.msc and press Enter.
+   - The Windows Defender Firewall with Advanced Security window opened.
+
+2. View Existing Rules:
+   - Clicked on "Inbound Rules" to see the current firewall rules.
+
+3. Block Port 23 (Telnet):
+   - Clicked on "New Rule" → Selected "Port" → Next.
+   - Selected "TCP", entered port 23 → Next.
+   - Chose "Block the connection" → Next.
+   - Applied to Domain, Private, Public → Next.
+   - Named the rule "Block Telnet Port 23" → Finish.
+
+4. Test Block Rule:
+   - Opened Command Prompt as Administrator.
+   - Enabled Telnet using: dism /online /Enable-Feature /FeatureName:TelnetClient
+   - Tried to connect: telnet localhost 23
+   - Connection failed, which means the rule worked.
+
+5. Allow Port 22 (SSH):
+   - Clicked on "New Rule" → Selected "Port" → Next.
+   - Selected "TCP", entered port 22 → Next.
+   - Chose "Allow the connection" → Next.
+   - Applied to Domain, Private, Public → Next.
+   - Named the rule "Allow SSH Port 22" → Finish.
+
+6. Remove Telnet Block Rule:
+   - Found the "Block Telnet Port 23" rule in Inbound Rules.
+   - Right-clicked and selected Delete.
+
+Commands Used for Testing:
+- dism /online /Enable-Feature /FeatureName:TelnetClient
+- telnet localhost 23
+
+Summary:
+Firewall filters traffic by allowing or blocking it based on rules. We created a rule to block Telnet (port 23), tested it, then allowed SSH (port 22), and finally removed the Telnet block to restore normal settings.

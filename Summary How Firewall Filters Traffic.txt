@@ -1,0 +1,32 @@
+Summary: How Firewall Filters Traffic
+
+A firewall is a security system that monitors and controls incoming and outgoing network traffic based on predefined security rules. Its main purpose is to allow safe traffic and block potentially harmful or unauthorized connections.
+
+How it works:
+
+1. **Traffic Inspection**:
+   - The firewall checks every data packet that tries to enter or leave the system.
+   - It looks at details like IP address, port number, protocol (TCP/UDP), and direction (inbound or outbound).
+
+2. **Rule Matching**:
+   - The firewall compares the packet with its list of rules.
+   - If a packet matches a rule that allows it, it is let through.
+   - If it matches a rule that blocks it, the packet is denied.
+
+3. **Types of Rules**:
+   - Allow or block specific **ports** (e.g., block Telnet on port 23, allow SSH on port 22).
+   - Allow or block **applications** or **services**.
+   - Limit access based on **IP addresses** or **network ranges**.
+   - Apply rules based on **network profiles** (Domain, Private, Public).
+
+4. **Direction Control**:
+   - **Inbound rules** control traffic coming into your computer.
+   - **Outbound rules** control traffic going out from your computer.
+
+Benefits of a Firewall:
+- Prevents unauthorized access.
+- Protects sensitive data.
+- Blocks harmful applications or malware.
+- Controls which programs can access the internet.
+
+In this task, we used the firewall to block Telnet (port 23), test the block, allow SSH (port 22), and finally remove the test block rule to return the firewall to its original state.
